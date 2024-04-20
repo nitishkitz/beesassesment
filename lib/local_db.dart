@@ -1,16 +1,11 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:io';
-import 'dart:typed_data';
 
-// import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqflite.dart' as sql;
-
-
+import 'package:sqflite/sqflite.dart';
 
 class DbHelper {
   var emptyString = "";
@@ -49,7 +44,7 @@ class DbHelper {
 // ** Contact Us Tables **
 //==============================================================================
 
-    await db.execute('''  
+    await db.execute('''
       CREATE TABLE appRegistration (
       ID INTEGER PRIMARY KEY AUTOINCREMENT,
       GrpCode TEXT,
@@ -63,7 +58,27 @@ class DbHelper {
       Mobile INTEGER,
       Email TEXT,
       RegistrationFee INTEGER,
-      ModiDt TEXT
+      ModiDt TEXT,
+        AdmnNo TEXT ,
+            RollNo TEXT ,
+            Name TEXT ,
+            CourseId INTEGER ,
+            BranchCode TEXT ,
+            Sem TEXT ,
+            AdmnType TEXT ,
+            DOB TEXT ,
+            // Gender Text ,
+            // ParentName TEXT ,
+            // PermAddress TEXT ,
+            // Email TEXT ,
+            // Nationality TEXT ,
+            // MothTounge TEXT ,
+            // Religion TEXT ,
+            // Category TEXT ,
+            // Mobile TEXT ,
+            // ParentsMobile TEXT ,
+            // Batch TEXT ,
+            // AadharNo TEXT 
       )
       ''');
 

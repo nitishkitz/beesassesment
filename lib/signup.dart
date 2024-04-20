@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:beesassesment/local_db.dart';
+import 'package:beesassesment/main.dart';
 import 'package:beesassesment/usermodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +137,8 @@ class _sighnUpState extends State<sighnUp> {
                                       onPressed: () {
                                         var random = Random();
                                         var randomInt = random.nextInt(1000);
-                                        if(retype==password){
+
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
                                           DbHelper.instance
                                               .insert("appRegistration",
                                               LocalUserRegisterModel(
@@ -154,12 +156,7 @@ class _sighnUpState extends State<sighnUp> {
                                               ).toJson()
                                           );
 
-                                        }else{
-                                          print("password should match");
-                                          //Simple to use, no global configuration
-                                          showToast("password should match and all the credentials to be filled",context:context);
 
-                                        }
 
 
 

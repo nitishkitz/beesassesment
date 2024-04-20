@@ -35,6 +35,7 @@ class LocalUserRegisterModel {
     this.email,
     this.registrationFee,
     this.modiDt,
+
   });
 
   factory LocalUserRegisterModel.fromJson(Map<String, dynamic> json) => LocalUserRegisterModel(
@@ -50,6 +51,8 @@ class LocalUserRegisterModel {
     email: json["Email"],
     registrationFee: json["RegistrationFee"],
     modiDt: json["ModiDt"],
+
+
   );
 
   Map<String, dynamic> toJson() => {

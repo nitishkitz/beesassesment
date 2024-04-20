@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class Usermodel {
   String? halltkt;
   String? admindate;
@@ -7,6 +9,17 @@ class Usermodel {
   String? mobilenumber;
   String? email;
   String? id;
+  // String? gender;
+  // String? ParentName;
+  // String? PermAddress;
+  // String? Nationality;
+  // String? MothTounge;
+  // String? Religion;
+  // String? Category;
+  // String? Mobile;
+  // String? ParentsMobile;
+  // String? Batch;
+
 
   Usermodel(
       {this.halltkt,
@@ -16,7 +29,18 @@ class Usermodel {
         this.aadhaar,
         this.mobilenumber,
         this.email,
-        this.id});
+        this.id,
+      // this.gender,
+      // this.Batch,
+      // this.Category,
+      // this.Mobile,
+      // this.MothTounge,
+      // this.Nationality,
+      // this.ParentName,
+      // this.ParentsMobile,
+      // this.PermAddress,
+      // this.Religion
+      });
 
   Usermodel.fromJson(Map<String, dynamic> json) {
     halltkt = json['halltkt'];
@@ -27,6 +51,16 @@ class Usermodel {
     mobilenumber = json['mobilenumber'];
     email = json['email'];
     id = json['id'];
+    // gender=json['gender'];
+    // Batch=json['Batch'];
+    // Category=json['Category'];
+    // Mobile=json['Mobile'];
+    // MothTounge=json['MothTounge'];
+    // ParentName=json['ParentName'];
+    // ParentsMobile=json['ParentsMobile'];
+    // PermAddress=json['PermAddress'];
+    // Religion=json['Religion'];
+
   }
 
   Map<String, dynamic> toJson() {
@@ -38,7 +72,17 @@ class Usermodel {
     data['aadhaar'] = this.aadhaar;
     data['mobilenumber'] = this.mobilenumber;
     data['email'] = this.email;
-    data['id'] = this.id;
+    // data['gender'] = this.gender;
+    // data['Batch'] = this.Batch;
+    // data['Category'] = this.Category;
+    // data['Mobile'] = this.Mobile;
+    // data['MothTounge'] = this.MothTounge;
+    // data['ParentName'] = this.ParentName;
+    // data['ParentsMobile'] = this.ParentsMobile;
+    // data['PermAddress'] = this.PermAddress;
+    // data['Religion'] = this.Religion;
+
+
     return data;
   }
 }
