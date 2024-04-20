@@ -72,7 +72,8 @@ class _sighnUpState extends State<sighnUp> {
                                     border: Border.all(color: Colors.grey)),
                                 child: TextFormField(
                                   controller: mobileNumber,
-                                  keyboardType: TextInputType.visiblePassword,
+                                  keyboardType: TextInputType.number,
+                                  maxLength: 10,
                                   decoration: InputDecoration(
                                       icon: Icon(
                                         Icons.phone_android,
@@ -135,8 +136,11 @@ class _sighnUpState extends State<sighnUp> {
                                   height: 50,
                                   child: ElevatedButton(
                                       onPressed: () {
+
                                         var random = Random();
                                         var randomInt = random.nextInt(1000);
+                                        showToast("Succesfully registered",
+                                            context: context);
 
                                           Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
                                           DbHelper.instance

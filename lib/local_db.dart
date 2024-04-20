@@ -66,19 +66,8 @@ class DbHelper {
             BranchCode TEXT ,
             Sem TEXT ,
             AdmnType TEXT ,
-            DOB TEXT ,
-            // Gender Text ,
-            // ParentName TEXT ,
-            // PermAddress TEXT ,
-            // Email TEXT ,
-            // Nationality TEXT ,
-            // MothTounge TEXT ,
-            // Religion TEXT ,
-            // Category TEXT ,
-            // Mobile TEXT ,
-            // ParentsMobile TEXT ,
-            // Batch TEXT ,
-            // AadharNo TEXT 
+            DOB TEXT 
+            
       )
       ''');
 
