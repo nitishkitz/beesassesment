@@ -3,9 +3,7 @@ import 'dart:math';
 import 'package:beesassesment/local_db.dart';
 import 'package:beesassesment/main.dart';
 import 'package:beesassesment/usermodel.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:toast/toast.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 class sighnUp extends StatefulWidget {
   const sighnUp({super.key});

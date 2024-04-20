@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:beesassesment/OVERALL%20PERFORMANCE.dart';
 import 'package:beesassesment/main.dart';
 import 'package:beesassesment/profile_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 
 class dashboard extends StatefulWidget {
   const dashboard({super.key});
@@ -14,6 +18,16 @@ class dashboard extends StatefulWidget {
 }
 
 class _dashboardState extends State<dashboard> {
+  File? _image;
+
+  Future<void> _pickImage(ImageSource source) async {
+    final pickedFile = await ImagePicker().pickImage(source: source);
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
   List<ProfileDataModel> profileData = [];
 
   @override
@@ -66,9 +80,10 @@ class _dashboardState extends State<dashboard> {
                     children: [
                       Center(child: Padding(
                         padding: const EdgeInsets.only(top:8.0),
-                        child: CircleAvatar(radius: 35),
-                      )),
-                      Padding(
+                        child: CircleAvatar(radius: 55,child: _image == null
+                            ? IconButton( onPressed: () => _pickImage(ImageSource.gallery),icon: Icon(Icons.add_a_photo),)
+                            : Image.file(_image!),),
+            )),                      Padding(
                         padding: const EdgeInsets.only(top: 22.0),
                         child: Text("NITHESH K"),
                       ),
