@@ -122,26 +122,32 @@ class _MyHomePageState extends State<MyHomePage> {
                                   width: 250,
                                   height: 50,
                                   child: ElevatedButton(
+
                                       onPressed: () {
-                                        var userData = usersList
-                                            .where((element) =>
-                                                element.password ==
-                                                    password.text.trim() &&
-                                                element.userName ==
-                                                    userName.text.trim())
-                                            .toList();
-                                        if (userData !=
-                                                <LocalUserRegisterModel>[] &&
-                                            userData.isNotEmpty &&
-                                            userData != null) {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const dashboard()));
-                                          showToast("User Login Successful",
-                                              context: context);
-                                          print("User Login Successful");
+
+
+                                        if(password.text.isNotEmpty&&userName.text.isNotEmpty){
+                                          var userData = usersList
+                                              .where((element) =>
+                                          element.password ==
+                                              password.text.trim() &&
+                                              element.userName ==
+                                                  userName.text.trim())
+                                              .toList();
+                                          if (userData !=
+                                              <LocalUserRegisterModel>[] &&
+                                              userData.isNotEmpty &&
+                                              userData != null) {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                    const dashboard()));
+                                            showToast("User Login Successful",
+                                                context: context);
+                                            print("User Login Successful");
+    }else{}
+
                                         } else {
                                           showToast(
                                               "User and password is not valid",

@@ -134,34 +134,45 @@ class _sighnUpState extends State<sighnUp> {
                                   height: 50,
                                   child: ElevatedButton(
                                       onPressed: () {
+                                        if (password.text == retype.text&& mobileNumber.text.isNotEmpty && userName.text.isNotEmpty) {
+                                          {
+                                            var random = Random();
+                                            var randomInt = random.nextInt(1000);
+                                            showToast("Succesfully registered",
+                                                context: context);
 
-                                        var random = Random();
-                                        var randomInt = random.nextInt(1000);
-                                        showToast("Succesfully registered",
-                                            context: context);
-
-                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
-                                          DbHelper.instance
-                                              .insert("appRegistration",
-                                              LocalUserRegisterModel(
-                                                  userName: userName.text.trim(),
-                                                  password: password.text.trim(),
-                                                  mobile: int.parse(mobileNumber.text.trim()),
-                                                  colCode: "PSS",
-                                                  collegeId: 0001,
-                                                  schoolId: 1,
-                                                  uSerType: 2,
-                                                  email: "shiva@gmail.com",
-                                                  grpCode: "BEES",
-                                                  studId: randomInt.toString(),
-                                                  modiDt: DateTime.now().toString()
-                                              ).toJson()
-                                          );
-
-
-
-
-
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        MyHomePage()));
+                                            DbHelper.instance.insert(
+                                                "appRegistration",
+                                                LocalUserRegisterModel(
+                                                    userName:
+                                                    userName.text.trim(),
+                                                    password:
+                                                    password.text.trim(),
+                                                    mobile: int.parse(
+                                                        mobileNumber.text
+                                                            .trim()),
+                                                    colCode: "PSS",
+                                                    collegeId: 0001,
+                                                    schoolId: 1,
+                                                    uSerType: 2,
+                                                    email: "shiva@gmail.com",
+                                                    grpCode: "BEES",
+                                                    studId:
+                                                    randomInt.toString(),
+                                                    modiDt: DateTime.now()
+                                                        .toString())
+                                                    .toJson());
+                                          }
+                                          showToast("Succesfully registered",
+                                              context: context);
+                                        }
+                                        else {showToast("Enter all the fields , password and retype password should match",
+                                            context: context);}
                                       },
                                       style: ElevatedButton.styleFrom(
                                           backgroundColor: Colors.green),
