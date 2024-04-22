@@ -83,7 +83,7 @@ class _dashboardState extends State<dashboard> {
                             : Image.file(_image!),),
             )),                      Padding(
                         padding: const EdgeInsets.only(top: 22.0),
-                        child: Text("NITHESH K"),
+                        child: Text("null"),
                       ),
                     ],
                   ),
