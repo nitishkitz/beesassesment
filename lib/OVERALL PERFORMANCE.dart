@@ -32,7 +32,6 @@ class overallPerformanceState extends State<overallPerformance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green,
         appBar: AppBar(
           title: Text("overallperformance"),
           backgroundColor: Colors.green,
@@ -43,8 +42,11 @@ class overallPerformanceState extends State<overallPerformance> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            color: Colors.grey,
-            child: Column(
+    child: profileData.isEmpty
+    ? Center(child: CircularProgressIndicator(
+
+    ),)
+           : Column(
               children: [
                 Center(
                   child:
