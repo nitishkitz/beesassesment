@@ -80,7 +80,8 @@ class _dashboardState extends State<dashboard> {
                         padding: const EdgeInsets.only(top:8.0),
                         child: CircleAvatar(radius: 55,child: _image == null
                             ? IconButton( onPressed: () => _pickImage(ImageSource.gallery),icon: Icon(Icons.add_a_photo),)
-                            : Image.file(_image!),),
+                            : CircleAvatar(radius: 55,
+                            child: Image.file(_image!)),),
             )),                      Padding(
                         padding: const EdgeInsets.only(top: 22.0),
                         child: Text("null"),

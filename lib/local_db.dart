@@ -14,14 +14,10 @@ class DbHelper {
   static Database? _database;
   static Database? _loadDatabase;
 
-/*----------> For avoid the multiple class instance and this lines of
-            code gives you a single private instance for global use <---------*/
-
   DbHelper._privateConstructor();
 
   static final DbHelper instance = DbHelper._privateConstructor();
 
-/*-----------------------> For check the database availability <--------------*/
 
   Future<Database?> get database async {
     if (_database != null) return _database;
@@ -29,7 +25,6 @@ class DbHelper {
     return _database;
   }
 
-/*----> For database is not available then get db path and create table <-----*/
 
   initDataBase() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
@@ -37,13 +32,8 @@ class DbHelper {
     return await openDatabase(path, version: dbVersion, onCreate: _onCreate);
   }
 
-/*----------------------> SQL Create Table Function <-------------------------*/
 
   Future _onCreate(Database db, int version) async {
-//==============================================================================
-// ** Contact Us Tables **
-//==============================================================================
-
     await db.execute('''
       CREATE TABLE appRegistration (
       ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -98,12 +88,6 @@ class DbHelper {
     //   )
     //   ''');
   }
-
-/*-------------> Functions For Insert, Query, Update and Delete <-------------*/
-
-//==============================================================================
-// ** Common Functions **
-//==============================================================================
 
   Future<int?> insert(String tableName, Map<String, dynamic> row) async {
     Database? db = await instance.database;
