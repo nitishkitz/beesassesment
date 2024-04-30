@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:beesassesment/dashboard.dart';
+import 'package:beesassesment/dropdown.dart';
 import 'package:beesassesment/local_db.dart';
+import 'package:beesassesment/navi.dart';
 import 'package:beesassesment/signup.dart';
 import 'package:beesassesment/usermodel.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const dashboard(),
+      home:  Marks(),
     );
   }
 }
